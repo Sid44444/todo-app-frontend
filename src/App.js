@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav';
+import AddItem from './components/AddItem';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Nav text="Welcome to my app"/>
+      <Nav text="Content Page"/>
+      <Nav text="About us"/>
+      <Nav text="How to add items to the list"/>
+      <AddItem />
+        <h4>Here is a list of things I nned to do</h4>
+        <ul>
+          <li>
+            Buy chocolate
+            <button>Done</button>
+            <button>Delete</button>
+            </li>
+          <li>
+            Tidy house
+            <button>Done</button>
+            <button>Delete</button>
+            </li>
+          <li>
+            Feed the dog
+            <button>Done</button>
+            <button>Delete</button>
+            </li>
+            <AddItem />
+        </ul>
       </div>
     );
   }
