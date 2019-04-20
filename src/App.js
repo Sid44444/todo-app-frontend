@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './components/Nav';
 import AddItem from './components/AddItem';
 import ListItem from './components/ListItems';
+import Header from './components/Header';
 
 const todoListItems = [
   "Buy cough sweets",
@@ -14,6 +15,7 @@ const todoListItems = [
 class App extends Component {
   render() {
     return (
+      <div><Header />
       <div className="App">
         <Nav text="Welcome to my ToDo Application" />
         <Nav text="Content Page" />
@@ -26,6 +28,7 @@ class App extends Component {
           })}
           <AddItem />
         </ul>
+      </div>
       </div>
     );
   }
