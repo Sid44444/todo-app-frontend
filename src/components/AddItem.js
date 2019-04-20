@@ -5,7 +5,7 @@ class AddItem extends Component {
         return (
             <div>
                 <form>
-                    <label>Your new todo;</label>
+                    <label>Your new task:</label>
                     <input type="text" />
                     <button type="button">Add</button>
                 </form>

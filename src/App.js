@@ -2,34 +2,29 @@ import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav';
 import AddItem from './components/AddItem';
+import ListItem from './components/ListItems';
+
+const todoListItems = [
+  "Buy cough sweets",
+  "Walk the dog",
+  "Go to Tesco",
+  "Email someone"
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Nav text="Welcome to my app"/>
-      <Nav text="Content Page"/>
-      <Nav text="About us"/>
-      <Nav text="How to add items to the list"/>
-      <AddItem />
-        <h4>Here is a list of things I nned to do</h4>
+        <Nav text="Welcome to my ToDo Application" />
+        <Nav text="Content Page" />
+        <Nav text="About us" />
+        <Nav text="How to add items to the list" />
+        <h4>Here is a list of things I need to do:</h4>
         <ul>
-          <li>
-            Buy chocolate
-            <button>Done</button>
-            <button>Delete</button>
-            </li>
-          <li>
-            Tidy house
-            <button>Done</button>
-            <button>Delete</button>
-            </li>
-          <li>
-            Feed the dog
-            <button>Done</button>
-            <button>Delete</button>
-            </li>
-            <AddItem />
+          {todoListItems.map(function (item) {
+            return <ListItem task={item} />
+          })}
+          <AddItem />
         </ul>
       </div>
     );
