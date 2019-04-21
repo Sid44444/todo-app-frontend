@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import AddItem from './components/AddItem';
 import ListItem from './components/ListItems';
 import Header from './components/Header';
+import { maxHeaderSize } from 'http';
 
 const todoListItems = [
   "Buy cough sweets",
@@ -12,11 +13,15 @@ const todoListItems = [
   "Email someone"
 ];
 
+
 class App extends Component {
+
   render() {
     return (
-      <div><Header />
+      
+
       <div className="App">
+      <h1 className="center blue-text">Welcome</h1>
         <Nav text="Welcome to my ToDo Application" />
         <Nav text="Content Page" />
         <Nav text="About us" />
@@ -29,7 +34,7 @@ class App extends Component {
           <AddItem />
         </ul>
       </div>
-      </div>
+      
     );
   }
 }
