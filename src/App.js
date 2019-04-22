@@ -18,10 +18,26 @@ class App extends Component {
 
   render() {
     return (
-      
+
+      <div className="container">
+        <div><br></br></div>
+        <div class="row">
+          <div class="col-sm-8">
+            <Header />
+          </div>
+        </div>
+        <div class="col=sm-4">
+      </div>
+      <div><br></br></div>
+
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+
 
       <div className="App">
-      <h1 className="center blue-text">Welcome</h1>
+        <h1 className="center blue-text">Wel</h1>
         <Nav text="Welcome to my ToDo Application" />
         <Nav text="Content Page" />
         <Nav text="About us" />
@@ -34,9 +50,11 @@ class App extends Component {
           <AddItem />
         </ul>
       </div>
+      </div>
       
     );
   }
 }
+
 
 export default App;
