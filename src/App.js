@@ -20,24 +20,22 @@ class App extends Component {
     return (
 
       <div className="container">
-        <div><br></br></div>
-        <div class="row">
-          <div class="col-sm-8">
-            <Header />
+        <div className="row">
+          <div className="col-sm-10">
           </div>
         </div>
-        <div class="col=sm-4">
+        <div className="col=sm-4">
       </div>
-      <div><br></br></div>
+      
 
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
         </div>
       </div>
 
 
       <div className="App">
-        <h1 className="center blue-text">Wel</h1>
+      <Header />
         <Nav text="Welcome to my ToDo Application" />
         <Nav text="Content Page" />
         <Nav text="About us" />
