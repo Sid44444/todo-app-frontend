@@ -25,31 +25,29 @@ class App extends Component {
           </div>
         </div>
         <div className="col=sm-4">
-      </div>
-      
+        </div>
 
-      <div className="container">
-        <div className="row">
+
+        <div className="container">
+          <div className="row">
+          </div>
+        </div>
+
+
+        <div className="App">
+          <Header />
+          <AddItem />
+          
+          <h4>Here is a list of things I need to do:</h4>
+          <ul>
+            {todoListItems.map(function (item) {
+              return <ListItem task={item} />
+            })}
+            
+          </ul>
         </div>
       </div>
 
-
-      <div className="App">
-      <Header />
-        <Nav text="Welcome to my ToDo Application" />
-        <Nav text="Content Page" />
-        <Nav text="About us" />
-        <Nav text="How to add items to the list" />
-        <h4>Here is a list of things I need to do:</h4>
-        <ul>
-          {todoListItems.map(function (item) {
-            return <ListItem task={item} />
-          })}
-          <AddItem />
-        </ul>
-      </div>
-      </div>
-      
     );
   }
 }
