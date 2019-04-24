@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 
-class Header extends Component {
+class Body extends Component {
 
     render() {
         return (
-        <h1 style={styles.header}>Welcome to my To Do Application</h1>)
+        <image> </image>)
         
     };
 
@@ -21,5 +21,4 @@ const styles = {
         
     }
 }
-export default Header;
-
+export default Body;

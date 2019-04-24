@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import AddItem from './components/AddItem';
 import ListItem from './components/ListItems';
 import Header from './components/Header';
+import Body from './components/Body';
 import { maxHeaderSize } from 'http';
 
 const todoListItems = [
@@ -37,6 +38,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <AddItem />
+          <Body />
           
           <h4>Here is a list of things I need to do:</h4>
           <ul>
