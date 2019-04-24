@@ -4,6 +4,7 @@ class AddItem extends Component {
     render() {
         return (
             <div>
+                <div class="container-fluid">
                 <form>
                     <form style={styles.addtask}>
                         <label>Your New Task:</label>
@@ -11,6 +12,7 @@ class AddItem extends Component {
                         <button type="button">Add task</button>
                     </form>
                 </form>
+            </div>
             </div>
         );
 
