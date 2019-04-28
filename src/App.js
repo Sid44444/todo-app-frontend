@@ -5,18 +5,11 @@ import Header from './components/Header';
 import TaskItem from './components/TaskItem';
 import TaskCounter from './components/TaskCounter';
 
-//const todoListItems = [
-// "Buy cough sweets",
-//"Walk the dog",
-// "Go to Tesco",
-// "Email someone"
-//];
-
 
 class App extends Component {
 
   state = {
-    task: [],
+    tasks: [],
   }//This is our array which now contains objects not just strings.
 
   addTask = (taskDescription) => {
@@ -49,7 +42,7 @@ class App extends Component {
 
         <div className="row">
           <div className="col-12 centered">
-            <TaskCounter taskCount={this.state.task.length} />
+            <TaskCounter taskCount={this.state.tasks.length} />
           </div>
         </div>
 

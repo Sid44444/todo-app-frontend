@@ -8,7 +8,7 @@ class TaskItem extends React.Component {
           {this.props.taskDescription}
         </div>
         <div className="col-sm-6 col-md-2">
-          <button type="button">Well done! Now Remove</button>
+          <button type="button">Done</button>
         </div>
         <div className="col-sm-6 col-md-2">
           <button type="button">Delete</button>
