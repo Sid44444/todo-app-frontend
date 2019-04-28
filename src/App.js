@@ -16,6 +16,8 @@ class App extends Component {
     //Needs to add the new task (which will be a string) to our task list
     // Make a fresh copy of the task array with slice
     let currentTasks = this.state.tasks;
+    // const taskObject = {task: currentTasks, completed: false};
+    // currentTasks.push(taskObject);
 
     currentTasks.push(taskDescription);
 
@@ -25,7 +27,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container ">
         <div className="row">
           <div className="col-12 centered">
             <Header />

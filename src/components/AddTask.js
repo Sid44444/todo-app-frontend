@@ -26,17 +26,10 @@ class AddTask extends Component {
     render() {
         return (
             <div>
-                {/* <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12 col-md-8 col-lg-6"></div>
-                        <form>
-                            <label htmlFor="inputNewTodo">Your New Task:</label>
-                            <input placeholder="Type your todo item" type="text" id="inputNewTodo" value={this.state.text} onChange={this.handleChange}></input>
-                            <button type="button">Add task</button>
-                        </form> */}
-                <input type="test" onChange={this.handleChange} />
+                <label htmlFor="inputNewTodo">Your New Task:</label>
+                <input placeholder="Type here" type="text" id="inputNewTodo" value={this.state.text} onChange={this.handleChange}></input>
                 <button type="button" onClick={this.handleClick}>
-                Add Task
+                    Add Task
                 </button>
             </div>
 
