@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import AddItem from './components/AddItem';
-import ListItem from './components/ListItems';
+import AddTask from './components/AddTask';
 import Header from './components/Header';
-import Body from './components/Body';
-import { maxHeaderSize } from 'http';
+import TaskItem from './components/TaskItem';
+import TaskCounter from './components/TaskCounter';
 
 //const todoListItems = [
 // "Buy cough sweets",
@@ -15,44 +14,56 @@ import { maxHeaderSize } from 'http';
 
 
 class App extends Component {
-  state = {
-    task: [
-      { task: "Feed the dog", completed: true },
-      { task: "Buy food for dinner", completed: false },
-      { task: "Arrange meetup with friend", completed: true },
-      { task: "Javascript challenges", completed: false },
-    ],
-  }//This is our array which now contains objects
 
+  state = {
+    task: [],
+  }//This is our array which now contains objects not just strings.
+
+  addTask = (taskDescription) => {
+    //Needs to add the new task (which will be a string) to our task list
+    // Make a fresh copy of the task array with slice
+    let currentTasks = this.state.tasks;
+
+    currentTasks.push(taskDescription);
+
+    this.setState({
+      tasks: currentTasks
+    });
+  }
   render() {
     return (
-
-      < div className = "container" >
+      <div className="container">
         <div className="row">
-          <Header />
+          <div className="col-12 centered">
+            <Header />
+          </div>
         </div>
 
-        <div className="container">
-          <div className="row">
-            <AddItem addTask={this.addTask} />
+
+        <div className="row">
+          <div className="col-12 centered">
+            <AddTask addTaskFunction={this.addTask} />
           </div>
+        </div>
+
+
+        <div className="row">
+          <div className="col-12 centered">
+            <TaskCounter taskCount={this.state.task.length} />
+          </div>
+        </div>
+
+
+        <div className="row">
           <div className="container">
-            <div className="row">
-            </div>
-
-
-            <h4>Here is a list of things I need to do:</h4>
-            <ul>
-              {this.state.tasks.map(function (item) {
-                return <ListItem task={item} />
+            {
+              this.state.tasks.map(function (item, index) {
+                return <TaskItem taskDescription={item} key={index}  />
               })
-              }
-
-            </ul>
+            }
           </div>
         </div>
-        </div>
-
+      </div>
     );
   }
 }
