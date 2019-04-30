@@ -20,14 +20,23 @@ class AddTask extends Component {
 
         // Maybe add validation? Should I be allowed to add this task?
         // if (newTask.length > 0) 
-        this.props.addTaskFunction(this.state.taskDescription);
+        //this.props.addTaskFunction(this.state.taskDescription);
+
+        const taskDescription = this.state.taskDescription;
+
+        if (taskDescription.length > 0) {
+            this.props.addTask(taskDescription);
+            this.setState({
+                taskDescription: ''
+            });
+        }
     }
 
     render() {
         return (
             <div>
                 <label htmlFor="inputNewTodo">Your New Task:</label>
-                <input placeholder="Type here" type="text" id="inputNewTodo" value={this.state.text} onChange={this.handleChange}></input>
+                <input placeholder="Type here" type="text" id="inputNewTodo" value={this.state.taskDescription} onChange={this.handleChange}></input>
                 <button type="button" onClick={this.handleClick}>
                     Add Task
                 </button>

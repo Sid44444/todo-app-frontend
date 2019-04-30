@@ -1,12 +1,7 @@
-
-/* .App {
-  text-align: center;
-  background-color: rgb(65, 115, 221); */
-
-/* } */
-
- .centered {
+.centered {
    text-align: center;
-   background-color: aquamarine
+   background-color: rgb(127, 255, 159);
+   font-style: normal;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }; 
 
