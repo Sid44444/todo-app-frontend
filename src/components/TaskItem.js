@@ -3,9 +3,9 @@ import React from 'react';
 class TaskItem extends React.Component {
 
   handleClick = () => {
-    console.log(this.props.index)
+    console.log(this.props.taskDescription.taskId)
     //we know the index position and now need to call the deleteTask function.
-    this.props.deleteTask(this.props.index)
+    this.props.deleteTask(this.props.taskDescription.taskId)
   }
 
   render() {
