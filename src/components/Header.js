@@ -14,9 +14,9 @@ class Header extends Component {
 //         textDecoration: "underline",
 //         textAlign: 'center',
 //         backgroundColor: 'hsl(147, 50%, 70%)',
-        
+
 //     }
-    
+
 // };
 export default Header;
 

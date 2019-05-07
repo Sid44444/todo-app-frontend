@@ -15,15 +15,19 @@ class TaskItem extends React.Component {
           {this.props.taskDescription.task}
         </div>
         <div className="col-sm-6 col-md-2">
-          <button type="button">Done</button> 
+          <button type="button">Done</button>
         </div>
         <div className="col-sm-6 col-md-2">
           <button type="button" onClick={this.handleClick}>
-          Delete
+            Delete
           </button>
-          
+
         </div>
       </div>
+      // <div className="col-2">
+      // {!this.props.completed && (
+      //   <button onClick={this.handleCompleetClick}>Mark as complete</button>
+      //   </div>
     );
   }
 }

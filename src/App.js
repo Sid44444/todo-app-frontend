@@ -16,7 +16,7 @@ class App extends Component {
     //Needs to add the new task (which will be a string) to our task list
     // Make a fresh copy of the task array with slice
     let currentTasks = this.state.tasks;
-    const taskObject = { task: taskDescription, completed: false , taskId: uuid()};
+    const taskObject = { task: taskDescription, completed: false, taskId: uuid() };
     currentTasks.push(taskObject);
 
     //tasks from input line(19) added into array. The new task is pushed into
@@ -28,19 +28,33 @@ class App extends Component {
 
   deleteTask = (id) => {
     //this will remove the item from the specific place and update the state.
-     //console.log(id)
+    //console.log(id)
     //splice
     //filter IN (return) every item that does not have htis id
     //set state
-const filteredTasks= this.state.tasks.filter((item) => {
-if (item.taskId !== id) {
-  return true;
-} else 
-return false;
-})
-this.setState({
-  tasks: filteredTasks
-});
+    const filteredTasks = this.state.tasks.filter((item) => {
+      if (item.taskId !== id) {
+        return true;
+      } else
+        return false;
+    })
+    this.setState({
+      tasks: filteredTasks
+    });
+  }
+
+  completeTask = (idComplete) => {
+    //this will put a line through the task to indicate it has been completed.
+    //similar structure to the deleteTask
+    const amendTask = this.state.task.map((item) => {
+      if(item.idComplete === idComplete) {
+        return true;
+      }
+      return item;
+    })
+    this.setState({
+      tasks: amendTask
+    });
   }
 
   render() {
@@ -71,13 +85,15 @@ this.setState({
         <div className="row">
           <div className="container">
             {
-              this.state.tasks.map( (item, index) => {
-                return <TaskItem 
-                taskDescription={item} 
-                //this if where we place delete task 
-                key={index} 
-                index={index} 
-                deleteTask={this.deleteTask}/>
+              this.state.tasks.map((item, index) => {
+                return <TaskItem
+                  taskDescription={item}
+                  //this if where we place delete task 
+                  //infact where we place all Tasks.
+                  amendTask={this.amendTask} 
+                  key={index}
+                  index={index}
+                  deleteTask={this.deleteTask} />
               })
             }
           </div>
