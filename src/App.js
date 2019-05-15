@@ -10,10 +10,10 @@ class App extends Component {
 
   state = {
     tasks: [
-      { task: "Feed the dog", completed: false },
-      { task: "Tidy", completed: false },
-      { task: "Wash up", completed: true },
-      { task: "Practice JS", completed: false },
+      { task: "Feed the dog", completed: false, id: uuid() },
+      { task: "Tidy", completed: false, id: uuid() },
+      { task: "Wash up", completed: false, id: uuid() },
+      { task: "Practice JS", completed: false, id: uuid() },
     ],
   }//This is our array which now contains objects not just strings.
 
@@ -46,7 +46,7 @@ class App extends Component {
     this.setState({
       tasks: filteredTasks
     });
-  }
+  };
 
   completeTask = (idComplete) => {
     //this will put a line through the task to indicate it has been completed.
@@ -98,6 +98,7 @@ class App extends Component {
                   amendTask={this.amendTask}
                   key={index}
                   index={index}
+                  completeTask={this.completeTask}
                   deleteTask={this.deleteTask} />
               })
             }
