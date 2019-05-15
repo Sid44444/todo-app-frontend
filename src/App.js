@@ -9,13 +9,18 @@ import uuid from "uuid/v4";
 class App extends Component {
 
   state = {
-    tasks: [],
+    tasks: [
+      { task: "Feed the dog", completed: false },
+      { task: "Tidy", completed: false },
+      { task: "Wash up", completed: true },
+      { task: "Practice JS", completed: false },
+    ],
   }//This is our array which now contains objects not just strings.
 
   addTask = (taskDescription) => {
     //Needs to add the new task (which will be a string) to our task list
     // Make a fresh copy of the task array with slice
-    let currentTasks = this.state.tasks;
+    const currentTasks = this.state.tasks.slice();
     const taskObject = { task: taskDescription, completed: false, taskId: uuid() };
     currentTasks.push(taskObject);
 
@@ -47,7 +52,7 @@ class App extends Component {
     //this will put a line through the task to indicate it has been completed.
     //similar structure to the deleteTask
     const amendTask = this.state.task.map((item) => {
-      if(item.idComplete === idComplete) {
+      if (item.idComplete === idComplete) {
         return true;
       }
       return item;
@@ -90,7 +95,7 @@ class App extends Component {
                   taskDescription={item}
                   //this if where we place delete task 
                   //infact where we place all Tasks.
-                  amendTask={this.amendTask} 
+                  amendTask={this.amendTask}
                   key={index}
                   index={index}
                   deleteTask={this.deleteTask} />

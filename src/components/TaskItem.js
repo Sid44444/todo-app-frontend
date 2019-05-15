@@ -9,18 +9,21 @@ class TaskItem extends React.Component {
   }
 
   render() {
+
+    let textColor = "black";
+
     return (
       <div className="row">
-        <div className="col-sm-12 col-md-8">
+        <div className="col-sm-12 col-md-8" styles={{color: textColor}}>
           {this.props.taskDescription.task}
         </div>
         <div className="col-sm-6 col-md-2">
-          <button type="button">Done</button>
+          {this.props.task.completed ? <button type="button">Well done! Now remove</button> : <button>Complete</button>}
         </div>
         <div className="col-sm-6 col-md-2">
-          <button type="button" onClick={this.handleClick}>
+          {this.props.task.completed ? null : <button type="button" onClick={this.handleClick}>
             Delete
-          </button>
+          </button>}
 
         </div>
       </div>
