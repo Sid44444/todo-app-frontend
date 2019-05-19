@@ -26,7 +26,7 @@ class TaskItem extends React.Component {
           {this.props.taskDescription.task}
         </div>
         <div className="col-sm-6 col-md-3">
-          {this.props.taskDescription.completed ? <button type="button">Well done! Now remove</button> : <button type="button"onClick={this.handleCompleteClick}>Complete</button>}
+          {this.props.taskDescription.completed ? <button type="button">Well done! Now remove</button> : <button type="button" onClick={this.handleCompleteClick}>Complete</button>}
         </div>
         <div className="col-sm-6 col-md-3">
           {this.props.taskDescription.completed ? null : <button type="button" onClick={this.handleDeleteClick}>
@@ -34,11 +34,13 @@ class TaskItem extends React.Component {
           </button>}
 
         </div>
+
+        {/* <div className="col-2">
+          {!this.props.completed && (
+            <button onClick={this.handleCompleetClick}>Mark as complete</button>
+          )}
+        </div> */}
       </div>
-      // <div className="col-2">
-      // {!this.props.completed && (
-      //   <button onClick={this.handleCompleetClick}>Mark as complete</button>
-      //   </div>
     );
   }
 }
