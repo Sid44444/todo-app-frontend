@@ -10,10 +10,10 @@ class App extends Component {
 
   state = {
     tasks: [
-      { task: "Feed the dog", completed: false, id: uuid() },
-      { task: "Tidy", completed: false, id: uuid() },
-      { task: "Wash up", completed: false, id: uuid() },
-      { task: "Practice JS", completed: false, id: uuid() },
+      { task: "Feed the dog", completed: false, taskId: uuid() },
+      { task: "Tidy", completed: false, taskId: uuid() },
+      { task: "Wash up", completed: false, taskId: uuid() },
+      { task: "Practice JS", completed: false, taskId: uuid() },
     ],
   }//This is our array which now contains objects not just strings.
 
@@ -32,34 +32,34 @@ class App extends Component {
   }
 
   deleteTask = (id) => {
-    //this will remove the item from the specific place and update the state.
-    //console.log(id)
-    //splice
-    //filter IN (return) every item that does not have htis id
-    //set state
-    const filteredTasks = this.state.tasks.filter((item) => {
-      if (item.taskId !== id) {
+    let currentTasks = this.state.tasks;
+
+    currentTasks = currentTasks.filter((item) => {
+      if(item.taskId !== id) {
         return true;
-      } else
-        return false;
-    })
-    this.setState({
-      tasks: filteredTasks
+      }
+
+      return false;
     });
+
+    this.setState({tasks: currentTasks});
   };
 
   completeTask = (idComplete) => {
-    //this will put a line through the task to indicate it has been completed.
-    //similar structure to the deleteTask
-    const amendTask = this.state.tasks.map((item) => {
-      if (item.idComplete === idComplete) {
+    let currentTasks = this.state.tasks;
+
+    let taskToMarkComplete = currentTasks.filter((item) => {
+      if(item.taskId === idComplete) {
         return true;
       }
-      return item;
-    })
-    this.setState({
-      tasks: amendTask
-    });
+      return false;
+    })[0];
+
+    taskToMarkComplete.completed = true;
+
+    this.setState({tasks: currentTasks});
+
+
   }
 
   render() {
@@ -92,10 +92,7 @@ class App extends Component {
             {
               this.state.tasks.map((item, index) => {
                 return <TaskItem
-                  taskDescription={item}
-                  //this if where we place delete task 
-                  //infact where we place all Tasks.
-                  amendTask={this.amendTask}
+                  task={item}
                   key={index}
                   index={index}
                   completeTask={this.completeTask}
