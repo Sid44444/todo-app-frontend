@@ -51,7 +51,7 @@ class App extends Component {
   completeTask = (idComplete) => {
     //this will put a line through the task to indicate it has been completed.
     //similar structure to the deleteTask
-    const amendTask = this.state.task.map((item) => {
+    const amendTask = this.state.tasks.map((item) => {
       if (item.idComplete === idComplete) {
         return true;
       }
