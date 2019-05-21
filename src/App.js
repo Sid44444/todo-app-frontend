@@ -35,29 +35,29 @@ class App extends Component {
     let currentTasks = this.state.tasks;
 
     currentTasks = currentTasks.filter((item) => {
-      if(item.taskId !== id) {
-       return true;
+      if (item.taskId !== id) {
+        return true;
       }
       return false;
     });
-    this.setState({tasks: currentTasks});
-    
+    this.setState({ tasks: currentTasks });
+
   };
 
   completeTask = (idComplete) => {
     let currentTasks = this.state.tasks;
 
     let taskToMarkComplete = currentTasks.filter((item) => {
-      if(item.taskId === idComplete) {
+      if (item.taskId === idComplete) {
         return true;
       }
       return false;
-  })[0];
+    })[0];
 
-  taskToMarkComplete.completed = true;
+    taskToMarkComplete.completed = true;
 
-  this.setState({tasks: currentTasks});
-}
+    this.setState({ tasks: currentTasks });
+  }
 
   render() {
     return (
