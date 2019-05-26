@@ -7,5 +7,12 @@
 }; 
 
 .header {
-   background-color: rgb(175, 126, 62);
+   background-color: rgb(175, 126, 62),
+   textDecoration "underline",
+   
+}
+
+.button {
+   border: none;
+   border-radius: 8px;
 }
