@@ -5,17 +5,26 @@ import Header from './components/Header';
 import TaskItem from './components/TaskItem';
 import TaskCounter from './components/TaskCounter';
 import uuid from "uuid/v4";
+import axios from 'axios';
+
+
 
 class App extends Component {
 
   state = {
-    tasks: [
-      { task: "Feed the dog", completed: false, taskId: uuid() },
-      { task: "Tidy", completed: false, taskId: uuid() },
-      { task: "Wash up", completed: false, taskId: uuid() },
-      { task: "Practice JS", completed: false, taskId: uuid() },
+    tasks: [  
     ],
   }//This is our array which now contains objects not just strings.
+
+  componentWillMount() {
+    axios.get('https://1dgjmrfv43.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+    .then(response => {
+      this.setState({tasks: response.data.tasks});
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 
   addTask = (taskDescription) => {
     //Needs to add the new task (which will be a string) to our task list
@@ -88,7 +97,6 @@ class App extends Component {
             {
               this.state.tasks.map((item, index) => {
                 return <TaskItem
-                  taskDescription={item}
                   task={item}
                   key={index}
                   index={index}

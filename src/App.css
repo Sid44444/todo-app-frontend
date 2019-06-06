@@ -1,12 +1,12 @@
 .centered {
    text-align: center;
-   background-color: rgb(206, 255, 127);
+   background-color: rgb(127, 146, 255);
    padding: 40px;
    font-style: normal;
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }; 
 
-.header {
+.body {
    background-color: rgb(175, 126, 62),
    textDecoration "underline",
    
