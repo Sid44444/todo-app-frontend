@@ -12,18 +12,18 @@ import axios from 'axios';
 class App extends Component {
 
   state = {
-    tasks: [  
+    tasks: [
     ],
   }//This is our array which now contains objects not just strings.
 
   componentWillMount() {
     axios.get('https://1dgjmrfv43.execute-api.eu-west-2.amazonaws.com/dev/tasks')
-    .then(response => {
-      this.setState({tasks: response.data.tasks});
-    })
-    .catch(error => {
-      console.log(error);
-    });
+      .then(response => {
+        this.setState({ tasks: response.data.tasks });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   addTask = (taskDescription) => {
@@ -51,6 +51,7 @@ class App extends Component {
     });
     this.setState({ tasks: currentTasks });
 
+
   };
 
   completeTask = (idComplete) => {
@@ -58,6 +59,7 @@ class App extends Component {
 
     let taskToMarkComplete = currentTasks.filter((item) => {
       if (item.taskId === idComplete) {
+
         return true;
       }
       return false;
@@ -66,6 +68,7 @@ class App extends Component {
     taskToMarkComplete.completed = true;
 
     this.setState({ tasks: currentTasks });
+
   }
 
   render() {

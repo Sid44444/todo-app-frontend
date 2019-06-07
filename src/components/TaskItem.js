@@ -25,15 +25,14 @@ class TaskItem extends React.Component {
           {this.props.task.Description}
         </div>
         <div className="col-sm-6 col-md-3">
-          {this.props.task.Completed ? <button type="button"style= {{color: "green"}}>Well done! Now remove</button> : <button type="button" onClick={this.handleCompleteClick}>Complete</button>}
+          {this.props.task.Completed ? <button type="button" style={{ color: "green" }}>Well done! Now remove</button> : <button type="button" onClick={this.handleCompleteClick}>Complete</button>}
         </div>
         <div className="col-sm-6 col-md-3">
-          <button type="button" style= {{color: "red"}}onClick={this.handleDeleteClick}>
+          <button type="button" style={{ color: "red" }} onClick={this.handleDeleteClick}>
             Delete
           </button>
 
         </div>
-
       </div>
     );
   }
